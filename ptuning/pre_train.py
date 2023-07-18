@@ -43,7 +43,7 @@ from transformers import (
     set_seed,
 )
 
-from arguments import ModelArguments, DataTrainingArguments
+from arguments_pretrain import ModelArguments, DataTrainingArguments
 
 logger = logging.getLogger(__name__)
 
