@@ -190,6 +190,7 @@ def main():
             k: [t[i : i + max_seq_length] for i in range(0, total_length, max_seq_length)]
             for k, t in concatenated_examples.items()
         }
+        print(result)
         return result
     
     with training_args.main_process_first(desc="grouping texts together"):
@@ -243,8 +244,6 @@ def main():
         mlm_probability=data_args.mlm_probability,
         # pad_to_multiple_of=8 if pad_to_multiple_of_8 else None,
     )
-
-    print(train_dataset)
 
     # Initialize our Trainer
     trainer = Trainer(
